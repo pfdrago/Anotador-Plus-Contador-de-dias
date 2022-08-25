@@ -89,7 +89,7 @@ function renderEvents() {
         button.addEventListener("click", (e) => {
             const id = button.getAttribute("data-id")
             events = events.filter((event) => event.id !== id)
-            save()
+            save(JSON.stringify(events))
             renderEvents()
         })
     })
@@ -105,10 +105,9 @@ function datediff(d) {
 
 function save(data) {
     localStorage.setItem("items", data)
+    console.log(events)
 }
 
 function load() {
     return localStorage.getItem("items")
 }
-
-console.log(events)
