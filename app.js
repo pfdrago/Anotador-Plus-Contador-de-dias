@@ -33,6 +33,13 @@ buttonAdd.addEventListener("click", (e) => {
         return
     }
     if (datediff(fecha.value) < 0) {
+        addEvent()
+        Swal.fire({
+        title: 'Error',
+        text: 'La fecha no puede ser anteior a la actual',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+    })
         return
     }
     addEvent()
